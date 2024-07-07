@@ -1,4 +1,5 @@
 # 注意事项
+- openwrt自带`vim`，对`vim`不熟悉的话可以安装`nano`，这个比较人性化，适合偶尔用下的同学。如果使用的是Windows系统，可以安装WinSCP软件连接openwrt修改和添加文件，相当方便
 - 如果openwrt这台路由器是连接另一台路由器的话一定要避免两台路由处于同一网段，如，上一级路由的网段：`192.168.1.XXX` ，openwrt的网段可以设置成 `192.168.2.xxx` 。因为如果两台路由处于同一网段，那么两台路由器dns和网关就相同，会导致设备上网不稳定。透明代理也是通过网关来实现的，透明代理也不会成功。修改openwrt的Lan口ip方法如下：
   用vim修改`/etc/config/network`文件
   ```bash
@@ -25,7 +26,6 @@
   # If you do not want to use proxy at all, set this to off.
   use_proxy = on
   ```
-  提示：可以使用winSCP软件连接openwrt修改和添加文件，相当方便
 
 # 安装软件包
 step.1 安装v2ray-core
