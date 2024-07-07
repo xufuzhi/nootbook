@@ -35,3 +35,27 @@ step.1 安装v2ray-core
 opkg update
 opkg install v2ray-core
 ```
+
+
+
+### 草稿
+可能需要安装的包如下，待确认，可以全部安装，反正也占用不了多少内存
+```bash
+luci-i18n-v2raya-zh-cn
+v2ray-geoip
+v2ray-geosite
+v2raya
+# ### iptables是实现透明代理的工具，如果想用v2raya实现透明代理的话必须安装一下包
+iptables-nft
+arptables-nft
+ebtables-nft
+xtables-nft
+
+ca-bundle
+ip-full
+iptables-mod-conntrack-extra
+iptables-mod-extra
+iptables-mod-filter
+iptables-mod-tproxy
+kmod-ipt-nat6
+```
