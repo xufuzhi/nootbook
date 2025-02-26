@@ -5,7 +5,7 @@
   ```bash
   vim /etc/config/network
   ```
-  找到`config interface 'lan'`这个条目然后修改`option ipaddr '192.168.2.1'`这行的ip为自己想要的段
+  找到`config interface 'lan'`这个条目，然后按i进入vim的编辑模式修改`option ipaddr '192.168.2.1'`这行的ip为自己想要的段
   ```bash
   config interface 'lan'
         	option device 'br-lan'
