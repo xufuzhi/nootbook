@@ -1,10 +1,10 @@
 # 安装 openwrt (以 友善r2s为例)
-### 官网下载 openwrt 系统文件
+- 官网下载 openwrt 系统文件
 建议去[官方网站下载](https://firmware-selector.openwrt.org/)，安全性有保证，其他人编译放网上的容易夹带私货。输入你路由器型号查找，就可以下载，例子中 r2s 选择 ext4 文件系统的镜像，后面扩容根目录方便。尽量不要自己编译系统，编译对网络环境要求高，系统环境依赖项多，没必要耗费不必要的精力去折腾。
 
-### 下载 [balenaEtcher](https://etcher.balena.io/) 烧录软件
-### r2s 的存储卡放入读卡器，插上电脑用balenaEtcher烧录刚才下载的系统镜像
-### 系统根目录扩容
+- 下载 [balenaEtcher](https://etcher.balena.io/) 烧录软件
+- r2s 的存储卡放入读卡器，插上电脑用balenaEtcher烧录刚才下载的系统镜像
+- 系统根目录扩容
 官方镜像的预设根目录很小，基本安装不了什么软件，需要对其扩容，[教程](https://www.youtube.com/watch?v=g6fEcavnDCo)，使用第二种方式最简单（4:30处开始）
 
 # 安装 v2ray 和透明代理
