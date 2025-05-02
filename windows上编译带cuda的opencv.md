@@ -1,3 +1,6 @@
+# 注意事项
+- cuda toolkit 和 visual studio 的版本有适配要求，如果版本不适配在cmake的时候就会报错找不到cuda，建议cuda的版本发布时间要在 vs 的版本发布时间之后，如果有问题多换几个版本试试
+
 
 # 1. 安装cuda和cudnn
 ### 1.1 安装cuda
@@ -14,7 +17,7 @@
 - 建议使用压缩文件格式手动安装，[https://developer.download.nvidia.com/compute/cudnn/redist/cudnn/windows-x86_64/](https://developer.download.nvidia.com/compute/cudnn/redist/cudnn/windows-x86_64/)，注意存档名字和cuda版本匹配。（如果想从.exe格式安装，google搜索cudnn下载，双击安装，不过强烈不建议，当前版本安装上需要手动配置path）
 - 解压cudnn安装包，把里面 `bin`, `include`, `lib` 三个文件夹复制到 `cuda` 的安装文件夹下，直接粘贴就行，有同名的文件夹会自动合并。
 
-# 2. 下载源码
+# 2. 编译并安装 OpenCV
 - 创建一个文件夹，例如： `opencv_build`，下载opencv源码： [https://github.com/opencv/opencv/releases](https://github.com/opencv/opencv/releases) 到此文件夹。要编译带cuda支持的opencv还需要下载opencv_contrib，[https://github.com/opencv/opencv_contrib/tags](https://github.com/opencv/opencv_contrib/tags)，注意opencv_contrib的版本要和opencv的版本对应
 - 解压两个源码文件，创建一个工作文件夹：`build`
 - 打开 cmake， 选择opencv源码位置和编译工作目录位置
