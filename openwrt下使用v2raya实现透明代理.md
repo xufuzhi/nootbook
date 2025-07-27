@@ -74,6 +74,7 @@ opkg install kmod-ipt-nat6
 * cd 至 passwall2 安装包所在的文件夹运行如下命令
   ```bash
   opkg update
+  opkg remove dnsmasq && opkg install dnsmasq-full
   # 透明代理基础依赖
   opkg install ipset  iptables-nft  kmod-nft-socket  kmod-nft-tproxy
   # 安装下载的所有包
