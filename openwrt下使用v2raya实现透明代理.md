@@ -35,7 +35,7 @@
   use_proxy = on
   ```
 
-# 安装软件包
+### 安装软件包
 step.1 安装v2ray-core
 这个项目提供在线安装和离线安装：[https://github.com/kuoruan/openwrt-v2ray]
 另一种方式直接用openwrt官方仓库安装（没有测试过）：
@@ -44,10 +44,7 @@ opkg update
 opkg install v2ray-core
 ```
 
-
-
-### 草稿
-可能需要安装的包如下，待确认，可以全部安装，反正也占用不了多少内存
+以下安装的包可能需要安装，待确认，可以全部安装，反正也占用不了多少内存
 ```bash
 opkg install luci-i18n-v2raya-zh-cn
 opkg install v2ray-geoip
@@ -70,6 +67,21 @@ opkg install kmod-ipt-nat6
 
 安装好以后进入 v2raya 的 web 管理页面可能还会提示在下载 `geoip.dat` 和 `geosite.dat`文件，在没有国际互联网的情况下这两个文件下载非常缓慢，还容易下载失败，可以 google 搜索下载，然后通过 WinSCP 等方式传入 openwrt 的 /usr/share/v2ray目录下。
 进入 v2raya 的 web 管理页面，添加好代理节点后再进入右上角“设置”里，设置一下透明代理。
+
+# 安装 passwall2
+* 下载passwall的安装包：[passwall2](https://github.com/xiaorouji/openwrt-passwall2/releases)，选择自己cpu架构对应的安装包
+* 解压 .zip 文件，并且上传至openwrt主机。
+* cd 至 passwall2 安装包所在的文件夹运行如下命令
+  ```bash
+  opkg update
+  # 透明代理基础依赖
+  opkg install ipset  iptables-nft  kmod-nft-socket  kmod-nft-tproxy
+  # 安装下载的所有包
+  opkg install *.ipk
+  # 进入 luci-app-passwall2_xxx_all，luci-i18n-passwall2-zh-cn_xxx_all 所在的文件夹
+  opkg install *.ipk
+  ```
+
 
 # openwrt 作为旁路网关使用
 - 旁路网关（网上也流传叫旁路由、独臂路由等），使用比较灵活，可以实现分设备代理（需要代理的设备设置网关和 DNS 为 openwrt 的 ip，不需要代理的设备随主路由）。设置 openwrt 为旁路网关方法：
