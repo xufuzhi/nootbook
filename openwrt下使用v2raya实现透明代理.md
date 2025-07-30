@@ -25,7 +25,16 @@
   然后按ESC键退出到 vim 的命令模式（可能需要多按几次），输入`:wq`保存退出
   在openwrt的管理页面上也可以修改IP，但是由于页面功能做的很不好，容易失败，不建议使用。
 - 尽量使用ssh连接路由器用opkg命令安装软件，成功率高
-- 路由器没有留学能力安装软件很慢而且很难成功，可以用一台电脑连接openwrt路由器，在电脑上打开v2rayN，并打开局域网分享功能。然后为opkg设置代理，编辑`/etc/opkg.conf`文件，添加例如`option http_proxy http://192.168.2.xxx:port`信息。为wget设置代理：在用户目录下创建`.wgetrc`文件并且添加信息
+- 路由器没有留学能力安装软件很慢而且很难成功，可以用一台电脑连接openwrt路由器，在电脑上打开v2rayN，并打开局域网分享功能。然后为opkg设置代理，
+  ```bash
+  vim /etc/opkg.conf
+  ```
+  加例如下信息。
+  ```bash
+  option http_proxy http://192.168.2.xxx:port
+  option https_proxy http://192.168.2.xxx:port
+  ```
+  为wget设置代理：在用户目录下创建`.wgetrc`文件并且添加信息
   ```bash
   https_proxy = http://192.168.2.x:xxxx/
   http_proxy = http://192.168.2.x:xxxx/
